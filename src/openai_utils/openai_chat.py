@@ -231,6 +231,9 @@ class AsyncOpenAIChatAPI:
                 parsed_content = json.loads(content)
                 LOGGER.debug(f"Parsed content: {parsed_content}")
                 return parsed_content
+            else:
+                LOGGER.debug(f"Response format is not JSON: {content}")
+                return content
             return None
         except (IndexError, KeyError, json.JSONDecodeError) as e:
             LOGGER.error(f"Error parsing response: {e}")

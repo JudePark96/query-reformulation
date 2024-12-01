@@ -12,7 +12,7 @@ fp16: true
 input_file: ./outputs/topiOCQA_maxlen=384.bin
 
 # Output directory
-output_dir: ./outputs/topiOCQA_maxlen=384_embedding
+output_dir: ./outputs/topiOCQA_maxlen=384_embeddings
 
 # Batch size
 batch_size: 128

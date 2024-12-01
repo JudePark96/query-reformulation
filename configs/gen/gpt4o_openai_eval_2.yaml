@@ -1,0 +1,19 @@
+inputs:
+  dataset: "topiOCQA"
+  eval_type: "dev"
+  input_file: "./rsc/preprocessed/topiOCQA/dev.json"
+  output_path: "./outputs/eval/openai_eval/"
+
+prompt:
+  system_prompt: "Given a question and its context, decontextualize the question by addressing coreference and omission issues. The resulting question should retain its original meaning and be as informative as possible, and should not duplicate any previously asked questions in the context. \n\nContext: [Q: When was Born to Fly released? A: Sara Evans’s third studio album, Born to Fly, was released on October 10, 2000.] \nQuestion: Was Born to Fly well received by critics? \nRewrite: Was Born to Fly well received by critics?\n\nContext: [Q: When was Keith Carradine born? A: Keith Ian Carradine was born August 8, 1949. Q: Is he married? A: Keith Carradine married Sandra Will on February 6, 1982.] \nQuestion: Do they have any children? \nRewrite: Do Keith Carradine and Sandra Will have any children? \n\nContext: [Q: Who proposed that atoms are the basic units of matter? A: John Dalton proposed that each chemical element is composed of atoms of a single, unique type, and they can combine to form more complex structures called chemical compounds.] \nQuestion: How did the proposal come about? \nRewrite: How did John Dalton’s proposal that each chemical element is composed of atoms of a single unique type, and they can combine to form more complex structures called chemical compounds come about? \n\nContext: [Q: What is it called when two liquids separate? A: Decantation is a process for the separation of mixtures of immiscible liquids or of a liquid and a solid mixture such as a suspension. Q: How does the separation occur? A: The layer closer to the top of the container-the less dense of the two liquids, or the liquid from which the precipitate or sediment has settled out-is poured off.] \nQuestion: Then what happens?\nRewrite: Then what happens after the layer closer to the top of the container is poured off with decantation?"
+  
+# OpenAI
+chat_config:
+  seed: 13
+  model: gpt-4o
+  temperature: 1.0  # default temperature
+  max_completion_tokens: 1024
+  secret_path: .secrets/openai
+  max_retries: 10
+  logprobs: false
+  # response_format: {"type": "json_object"}
