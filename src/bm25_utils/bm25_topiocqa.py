@@ -20,7 +20,6 @@ def read_trec_file(file: str) -> Dict[str, Dict[str, str]]:
     return o
 
 def main(opts: argparse.Namespace):
-    
     with open(opts.input_file, "r") as f:
         queries = [json.loads(line) for line in f]
         
@@ -55,6 +54,8 @@ def main(opts: argparse.Namespace):
     LOGGER.info(f"Recall@10: {np.mean(recall_10_list)}")
     LOGGER.info(f"Recall@20: {np.mean(recall_20_list)}")
     LOGGER.info(f"Recall@100: {np.mean(recall_100_list)}")
+
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

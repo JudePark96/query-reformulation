@@ -1,6 +1,6 @@
 [project]
 authors = [{name = "Eunhwan Park", email = "park.jude.96@gmail.com"}]
-dependencies = ["pytrec-eval>=0.5,<0.6", "pyserini>=0.24.0,<0.25"]
+dependencies = ["pytrec-eval>=0.5,<0.6", "pyserini>=0.24.0,<0.25", "peft>=0.13.2,<0.14", "bitsandbytes>=0.44.1,<0.45"]
 description = "Add a short description here"
 name = "query-reformulation"
 requires-python = ">=3.9"
